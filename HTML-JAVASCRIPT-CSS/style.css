@@ -1,42 +1,28 @@
 body { 
     width: 600px;
-    margin:auto;
-   
     text-align: left;
-   
-    line-height:12.0pt;
     font-size:12px;
     font-family:Nunito;
     color:black;
+    counter-reset: my-sec-counter 1 section 4;
 }
 
-ol {
-    /* убираем стандартную нумерацию */
-    list-style: second;
-    /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
-    counter-reset: li;
-   
- }
+  h1::before {
+    /* Increment "my-sec-counter" by 1 */
+    counter-increment: my-sec-counter;
+    content: "DEL " counter(my-sec-counter, upper-roman);
+  }
+  h2::before{
+      counter-increment: section;
+      content: "KAPITEL " counter(section);
+  }
 
- li { 
+    ol {
+        list-style: none;
+        counter-reset: li;
+  }
 
- }
- li:before {
-    /* Определяем элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое, вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается значение приращения счетчика (по умолчанию равно 1). */
+  li::before {
     counter-increment: li;
-    /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
-    content: counters(li, ".") ". ";
-   
-    
- }
-
-    .upper-roman {
-        list-style-type: upper-roman;
-        counter-reset: first;
-    }
-
-    .lower-latin{
-        list-style-type: lower-latin;
-        counter-reset: second;
-        
-    }
+    content: counter(section) "." counters(li,".") "  ";
+  }
