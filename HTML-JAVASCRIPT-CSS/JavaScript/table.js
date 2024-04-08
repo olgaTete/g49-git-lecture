@@ -8,37 +8,37 @@ const getCar = () => {
 const getCarData = () => {
     return [
         {
-        "brend": "Saab AB",
+        "companies": "Saab AB",
         "city": "Stockholm",
         "date": "1937"
         },
         {
-            "brend": "Volvo Croup",
+            "companies": "Volvo Croup",
             "city": "Göteborg",
             "date": "1927"
         },
         {
-            "brend": "Sandvik AB",
+            "companies": "Sandvik AB",
             "city": "Stockholm",
             "date": "1862"
         },
         {
-            "brend": "Atlas Copco Group",
+            "companies": "Atlas Copco Group",
             "city": "Naska",
             "date": "1873"
         },
         {
-            "brend": "Electrolux AB",
+            "companies": "Electrolux AB",
             "city": "Stockholm",
             "date": "1919"
         },
         {
-            "brend": "Skanska AB",
+            "companies": "Skanska AB",
             "city": "Stockholm",
             "date": "1887"
         },
         {
-            "brend": "Saab AB",
+            "companies": "Saab AB",
             "city": "Stockholm",
             "date": "1937"
         }
@@ -60,7 +60,7 @@ const getRow = (rowData) => {
     const rowToAdd = document.createElement("tr");
    
     const tableData1 = document.createElement("td");
-    tableData1.innerText = rowData.brend;
+    tableData1.innerText = rowData.companies;
     rowToAdd.appendChild(tableData1);
 
     const tableData2 = document.createElement("td");
